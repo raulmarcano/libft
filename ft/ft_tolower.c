@@ -6,20 +6,20 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 20:10:19 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/11 20:12:20 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:03:45 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-  if (c >= 65 && c <= 90)
-    c = c + 32;
-  return (c);
+	if (c >= 65 && c <= 90)
+		c = c + 32;
+	return (c);
 }
-
-int main()
+/*
+int	main()
 {
-  ft_tolower('Z');
-}
+	ft_tolower('Z');
+}*/
