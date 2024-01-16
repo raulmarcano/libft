@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 11:15:25 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/16 13:48:22 by rmarcano         ###   ########.fr       */
+/*   Created: 2024/01/16 11:48:23 by rmarcano          #+#    #+#             */
+/*   Updated: 2024/01/16 13:45:46 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
+#include <stdlib.h>
 
-int	ft_atoi(const char *str)
+void	*ft_calloc(size_t count, size_t size)
 {
+	int	*arr;
 	int	i;
-	int	sign;
-	int	result;
 
+	arr = malloc(count * size);
 	i = 0;
-	sign = 1;
-	result = 0;
-	while (str[i] == ' ' || str[i] == '+')
-		i++;
-	while (str[i] == '-')
+	if (arr != NULL)
 	{
-		sign = sign * -1;
-		i++;
+		while (i < count)
+		{
+			arr[i] = 0;
+			i++;
+		}
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	return (arr);
 }
