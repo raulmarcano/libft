@@ -9,6 +9,7 @@
 /*   Updated: 2024/01/15 20:35:53 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

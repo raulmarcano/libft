@@ -9,8 +9,7 @@
 /*   Updated: 2024/01/16 13:45:46 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
