@@ -6,7 +6,7 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 18:51:39 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/15 11:48:26 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:50:36 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	destiny = dst;
 	source = src;
 	i = 0;
+	if (dst == NULL && src == NULL)
+		return (0);
 	if (destiny < source)
 	{
 		while (len--)
