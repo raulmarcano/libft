@@ -6,16 +6,16 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 13:50:13 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/16 14:19:22 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/17 12:24:52 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {
-	int		size;
-	int		i;
-	char	*arr;
+	size_t		size;
+	size_t		i;
+	char		*arr;
 
 	if (!s1)
 		return (0);

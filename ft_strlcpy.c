@@ -6,7 +6,7 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:46:00 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/15 15:19:06 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:01:17 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,6 +21,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	if (dstsize > 0)
+		dst[i] = '\0';
+	while (src[i])
+		i++;
 	return (i);
 }

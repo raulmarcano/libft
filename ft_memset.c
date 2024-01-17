@@ -6,20 +6,10 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:09:27 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/15 17:01:51 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/17 12:27:10 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-size_t	ft_strlen(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
 
 void	*ft_memset(void *b, int c, size_t len)
 {

@@ -6,12 +6,12 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:28:54 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/16 14:34:54 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/17 12:31:52 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 	{

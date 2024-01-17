@@ -6,12 +6,12 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:46:16 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/09 15:06:17 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/17 12:25:16 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
