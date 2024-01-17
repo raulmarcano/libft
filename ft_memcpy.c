@@ -6,7 +6,7 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:28:59 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/11 12:58:08 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:43:37 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,6 +15,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (dst == NULL && src == NULL)
+		return (0);
 	i = 0;
 	while (i < n)
 	{
@@ -24,11 +26,19 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 /*
+#include <stdio.h>
+#include <string.h>
 int main()
 {
-	char source[] = "commit soon";
-	char destiny[20];
+	const char original[] = "Hola, Mundo!";
+    char destino_memcpy[20];
+    
+//	memcpy(((void *)0), "segfaulter tu dois", 17);
 
+    printf("Resultado de memcpy: %s\n", destino_memcpy);
 
-	ft_memcpy(destiny, source, 5);
+    char destino_ft_memcpy[20];
+    ft_memcpy(((void *)0), "segfaulter tu dois", 17);
+
+    printf("Resultado de ft_memcpy: %s\n", destino_ft_memcpy);
 }*/
