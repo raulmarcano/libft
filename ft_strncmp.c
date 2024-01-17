@@ -6,7 +6,7 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:20:57 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/17 17:40:10 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:21:50 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -34,8 +34,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int main(void)
 {
-    const char *str1 = "test2";
-    const char *str2 = "test1";
+    const char *str1 = "test\02";
+    const char *str2 = "test\n";
 
     int result_ft = ft_strncmp(str1, str2, 6);
     printf("Resultado de ft_strncmp: %d\n", result_ft);
