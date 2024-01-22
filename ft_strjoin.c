@@ -6,7 +6,7 @@
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:20:50 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/01/22 15:59:58 by rmarcano         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:00:33 by rmarcano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,7 +22,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	cat = (char *)malloc(cat_len);
 	if (cat == NULL)
 		return (NULL);
-
 	i = 0;
 	j = 0;
 	while (s1[i] != '\0')
