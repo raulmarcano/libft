@@ -11,100 +11,80 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_free(char **str, size_t count)
 {
-	char	*sub;
 	size_t	i;
 
-	if (!s || start > ft_strlen(s))
-	{
-		sub = (char *)(malloc(1 * sizeof(char)));
-		sub[0] = '\0';
-		return (sub);
-	}
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	sub = (char *)(malloc(sizeof(char) * (len + 1)));
-	if (sub == NULL)
-		return (NULL);
 	i = 0;
-	while (i < len && s[start + i] != '\0')
+	while (i < count)
 	{
-		sub[i] = s[start + i];
+		free(str[i]);
 		i++;
 	}
-	sub[i] = '\0';
-	return (sub);
+	free(str);
 }
 
-int	words(char *s, char c)
+size_t	words(const char *s, char c)
 {
-	int	count;
-	int	i;
-	
+	size_t	count;
+	size_t	i;
+
 	count = 0;
 	i = 0;
 	while (s[i] != '\0')
 	{
 		if (!(s[i] == c) && (s[i + 1] == c || s[i + 1] == '\0'))
-				count++;
+			count++;
 		i++;
 	}
 	return (count);
 }
 
-
-
-
-
-void	divide(char **strings, *s, char c, int count)
+char	**ft_split(char const *s, char c)
 {
-	int	start;
-	int	end;
-	int	i;
-	int	j;
-	int	cap;
+	char	**str;
+	size_t	count;
+	size_t	i;
+	size_t	j;
 
-	cap = 0;
+	count = 0;
+	i = 0;
 	j = 0;
-	while (s[i] != '\0')
-	{
-		i = 0;
-		if (!s[i] == c && cap == 0)
-		{
-			start = i;
-			cap = 1;
-		}
-		if (!(s[i] == c) && (s[i + 1] == c || s[i + 1] == '\0'))
-		{
-			end = i;
-			cap = 0;
-		}
-		while (j <= count)
-			strings[j++] =  t_substr(s, start, end - start + 1);
-		i++;
-	}
-}
-
-
-
-
-
-char **ft_split(char const *s, char c);
-{
-	char **strings;
-	int	count;
-	
-	count = words(s, c);
-	strings = (char **)malloc((count + 1)* sizeof(void *));
-	if (!strings)
+	str = (char **)malloc((words(s, c) + 1) * sizeof(char *));
+	if (!str)
 		return (NULL);
-	divide(strings, (char *)s, c, count);
-	return (strings);
+	while (s[i] != '\0' && count < words(s, c))
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		j = i;
+		while (s[i] && s[i] != c)
+			i++;
+		str[count++] = ft_substr(s, j, (i - j));
+	}
+	if (!str)
+		ft_free(str, words(s, c));
+	return (str);
 }
 
-int	main()
-{
-	ft_split("Este es split", ' '); 
-	return(0);
-}
+// #include <stdio.h>
+// int main()
+// {
+//     char const *input_string = "      split       this for   me  !       ";
+//     char **result = ft_split(input_string, ' ');
+
+//     if (result)
+//     {
+//         size_t i = 0;
+//         while (result[i] != NULL)
+//         {
+//             printf("Word %d:%s\n", i + 1, result[i]);
+//             i++;
+//         }
+
+//         // Limpieza de la memoria
+//         ft_free(result, words(input_string, ' '));
+//     }
+
+//     return 0;
+// }
