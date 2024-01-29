@@ -45,9 +45,9 @@ static	int	words(const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	int	count;
-	int	i;
-	int	j;
+	int		count;
+	int		i;
+	int		j;
 
 	count = 0;
 	i = 0;

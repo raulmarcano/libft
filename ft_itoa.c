@@ -10,27 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_itoa(int n)
-{
-    if (n < 0)
-    {
+// char *ft_itoa(int n)
+// {
+//     int count;
+//     count = digits;
+//     if (n < 0)
+//         count = count + 1;
+    
+// }
+// int digits(int num)
+// {
+//     int count;
+//     if (num < 0)
+//         num = num * -1;
+//     if(num / 10 > 0)
+//     {
+//         count++;
+//         num = num / 10;
+//         digits(num);
+//     }
+//     return (count);
+// }
 
-    }
-}
-int digits(int num)
-{
-    int count;
-    if(num / 10 > 0)
-    {
-        count++;
-        num = num / 10;
-        digits(num);
-    }
-    return (count);
-}
-
-int main()
-{
-    int i;
-    char *a;
-}
+// int main()
+// {
+//     int i;
+//     char *a;
+// }
