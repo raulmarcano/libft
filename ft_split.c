@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_free(char **str, size_t count)
+static	void	ft_free(char **str, size_t count)
 {
 	size_t	i;
 
@@ -24,16 +24,18 @@ void	ft_free(char **str, size_t count)
 	free(str);
 }
 
-size_t	words(const char *s, char c)
+static	int	words(const char *s, char c)
 {
-	size_t	count;
-	size_t	i;
+	int	count;
+	int	i;
 
 	count = 0;
 	i = 0;
+	while (s[i] == c && s[i] != '\0')
+		i++;
 	while (s[i] != '\0')
 	{
-		if (!(s[i] == c) && (s[i + 1] == c || s[i + 1] == '\0'))
+		if ((i == 0) || ((s[i] != c) && (s[i - 1] == c)))
 			count++;
 		i++;
 	}
@@ -43,9 +45,9 @@ size_t	words(const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	size_t	count;
-	size_t	i;
-	size_t	j;
+	int	count;
+	int	i;
+	int	j;
 
 	count = 0;
 	i = 0;
@@ -55,13 +57,14 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (s[i] != '\0' && count < words(s, c))
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] == c)
 			i++;
 		j = i;
 		while (s[i] && s[i] != c)
 			i++;
 		str[count++] = ft_substr(s, j, (i - j));
 	}
+	str[count] = NULL;
 	if (!str)
 		ft_free(str, words(s, c));
 	return (str);
@@ -70,19 +73,18 @@ char	**ft_split(char const *s, char c)
 // #include <stdio.h>
 // int main()
 // {
-//     char const *input_string = "      split       this for   me  !       ";
+//     char const *input_string = "HELLO";
 //     char **result = ft_split(input_string, ' ');
 
 //     if (result)
 //     {
-//         size_t i = 0;
+//         int i = 0;
 //         while (result[i] != NULL)
 //         {
 //             printf("Word %d:%s\n", i + 1, result[i]);
 //             i++;
 //         }
 
-//         // Limpieza de la memoria
 //         ft_free(result, words(input_string, ' '));
 //     }
 
