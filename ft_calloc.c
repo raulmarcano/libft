@@ -13,18 +13,13 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	int		*arr;
+	char	*arr;
 	size_t	i;
 
 	arr = malloc(count * size);
 	i = 0;
-	if (arr != NULL)
-	{
-		while (i < count)
-		{
-			arr[i] = 0;
-			i++;
-		}
-	}
+	if (arr == NULL)
+		return(NULL);
+	ft_memset(arr, 0, (count * size));
 	return (arr);
 }
