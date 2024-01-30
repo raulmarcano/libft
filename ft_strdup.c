@@ -16,15 +16,13 @@ char	*ft_strdup(const char *s1)
 	size_t		size;
 	size_t		i;
 	char		*arr;
-
-	if (!s1[0])
-		return (NULL);
+	
 	size = (ft_strlen(s1) + 1);
 	arr = malloc(size * sizeof(char));
 	i = 0;
 	if (!arr)
 		return (NULL);
-	while (i < size)
+	while (i + 1 < size)
 	{
 		arr[i] = s1[i];
 		i++;
