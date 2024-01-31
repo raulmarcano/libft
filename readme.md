@@ -26,7 +26,7 @@ To use Libft in your project, follow these steps:
 
 1. Clone the repository.
 2. Run the `make` command in the project root directory.
-3. ...
+3. Most of them had the main function to make some tests.
 
 ## List of Functions
 
@@ -83,9 +83,9 @@ To use Libft in your project, follow these steps:
 - `ft_lstmap`
  
 
-## Usage
+## Example 
 
-Here's a simple example of how to use Libft in your C program:
+Here's an example of how to use Libft in your C program:
 
 ```c
 #include "libft.h"
