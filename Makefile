@@ -12,7 +12,7 @@ ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_f
 
 BNS = ft_lstnew_bonus.c
 
-OBNS = $(BNS:.c=.o)
+O_BNS = $(BNS:.c=.o)
 
 OBJS = $(SRC:.c=.o)
 
@@ -25,14 +25,14 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
 
-bonus: $(BNS)
-	ar -rcs $(NAME) $(OBNS)
+bonus: $(O_BNS)
+	ar -rcs $(NAME) $(O_BNS)
 
 %.o: %.c $(INCLUDE)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJS) $(OBNS)
+	@$(RM) $(OBJS) $(O_BNS)
 
 fclean: clean
 	@$(RM) $(NAME) 
