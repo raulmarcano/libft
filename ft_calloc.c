@@ -14,10 +14,8 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*arr;
-	size_t	i;
 
 	arr = malloc(count * size);
-	i = 0;
 	if (arr == NULL)
 		return (NULL);
 	ft_memset(arr, 0, (count * size));

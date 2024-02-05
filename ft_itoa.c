@@ -56,12 +56,10 @@ char	*ft_transform(char *s, long n, size_t count)
 char	*ft_itoa(int n)
 {
 	int		count;
-	int		num;
 	char	*s;
 
 	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
-	num = n;
 	count = digits(n);
 	s = ft_calloc((count + 1), sizeof(char));
 	if (!s)
