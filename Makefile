@@ -10,7 +10,7 @@ ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_st
 ft_strrchr.c ft_tolower.c ft_toupper.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 
-BNS = ft_lstnew_bonus.c
+BNS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c
 
 O_BNS = $(BNS:.c=.o)
 
@@ -23,13 +23,13 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar -rcs $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 bonus: $(O_BNS)
 	ar -rcs $(NAME) $(O_BNS)
 
 %.o: %.c $(INCLUDE)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS) $(O_BNS)
