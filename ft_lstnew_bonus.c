@@ -34,9 +34,9 @@ int main()
     int test_data3 = 56;
 
     // Create three nodes using ft_lstnew_bonus
-    t_list *node1 = ft_lstnew_bonus(&test_data1);
-    t_list *node2 = ft_lstnew_bonus(&test_data2);
-    t_list *node3 = ft_lstnew_bonus(&test_data3);
+    t_list *node1 = ft_lstnew(&test_data1);
+    t_list *node2 = ft_lstnew(&test_data2);
+    t_list *node3 = ft_lstnew(&test_data3);
 
     // Check if node creation was successful
     if (node1 && node2 && node3)
