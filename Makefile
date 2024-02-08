@@ -18,8 +18,6 @@ O_BNS = $(BNS:.c=.o)
 
 OBJS = $(SRC:.c=.o)
 
-INCLUDE = libft.h
-
 RM = rm -f
 
 all: $(NAME)
