@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_free(char **str, size_t count)
+static	void	ft_free(char **str, size_t count)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ void	ft_free(char **str, size_t count)
 	free(str);
 }
 
-int	words(const char *s, char c)
+static	int	words(const char *s, char c)
 {
 	int	count;
 	int	i;

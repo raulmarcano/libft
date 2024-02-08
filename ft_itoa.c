@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	digits(int num)
+static	int	digits(int num)
 {
 	int	count;
 	int	n;
@@ -28,7 +28,7 @@ int	digits(int num)
 	return (count);
 }
 
-char	*ft_transform(char *s, long n, size_t count)
+static	char	*ft_transform(char *s, long n, size_t count)
 {
 	int	i;
 
