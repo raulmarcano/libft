@@ -25,13 +25,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJS) 
-	ar -rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
 
 bonus: $(O_BNS) $(OBJS)
-	ar -rcs $(NAME) $(O_BNS) $(OBJS)
-
-# %.o: %.c $(INCLUDE)
-# 	$(CC) $(CFLAGS) -c $< -o $@
+	@ar -rcs $(NAME) $(O_BNS) $(OBJS)
 
 clean:
 	@$(RM) $(OBJS) $(O_BNS)
